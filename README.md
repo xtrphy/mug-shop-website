@@ -1,0 +1,1 @@
+# Online mug store

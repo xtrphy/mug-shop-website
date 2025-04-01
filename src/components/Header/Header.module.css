@@ -1,0 +1,82 @@
+.header {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    height: 5rem;
+    width: 100vw;
+    background-color: white;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    transition: 0.15s;
+}
+
+.link:hover {
+    color: rgb(102, 102, 102);
+}
+
+.logo {
+    max-width: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .375rem;
+    color: white;
+    font-size: .9375rem;
+    text-decoration: none;
+    border-radius: 3.25rem;
+    background-color: rgba(6, 6, 6, 1);
+    padding: .5625rem 2.5rem;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.btn:hover {
+    background-color: rgba(56, 56, 56, 1);
+}
+
+.userPanel {
+    display: flex;
+    justify-content: center;
+    gap: .625rem;
+}
+
+.cart {
+    margin-right: 5px;
+}
+
+.exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50%;
+    color: black;
+    transition: 0.15s ease;
+}
+
+.exit:hover {
+    background-color: rgb(6, 6, 6);
+    color: white;
+}

@@ -1,0 +1,56 @@
+.section {
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+    padding: 0 1rem;
+}
+
+.collections {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 500;
+}
+
+.mugs {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    font-size: .9375rem;
+    text-decoration: none;
+    border-radius: 3.25rem;
+    background-color: rgba(6, 6, 6, 1);
+    padding: .5625rem 2.5rem;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.btn:hover {
+    background-color: rgba(56, 56, 56, 1);
+}
+
+.quantity {
+    display: none;
+    margin-left: 10px;
+    width: 50px;
+    border: none;
+    background: transparent;
+}
+
+.mug img {
+    max-width: 400px;
+    transition: 0.15s ease;
+}
+
+.mug img:hover {
+    transform: scale(1.02);
+}
