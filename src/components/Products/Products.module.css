@@ -1,19 +1,31 @@
+.layout {
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
 .section {
-    margin-top: 1rem;
-    margin-bottom: 10rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     padding: 0 1rem;
 }
 
-.collections {
+.allProducts {
     font-size: 2.25rem;
-    line-height: 2.75rem;
     font-weight: 500;
+    line-height: 2.75rem;
 }
 
 .mugs {
     margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    flex-wrap: wrap;
+}
+
+.mug {
+    margin-bottom: 3rem;
 }
 
 .info {

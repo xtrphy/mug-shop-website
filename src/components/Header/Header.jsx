@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '../../assets/Icon.png';
 import styles from './Header.module.css';
 
@@ -6,13 +7,16 @@ const Header = ({ quantity = 0 }) => {
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
-                <a className={styles.link} href="/">Home</a>
-                <a className={styles.link} href="/">All products</a>
+                <Link to='/' className={styles.link}>Home</Link>
+                <Link to='/products' className={styles.link}>All products</Link>
+                <Link to='/contacts' className={styles.link}>Contacts</Link>
                 <a className={styles.link} href="/">About Us</a>
-                <a className={styles.link} href="/">Contacts</a>
+                {/* <Link to='contacts' className={styles.link}>About Us</Link> */}
             </nav>
 
-            <a className={styles.logo} href="/"><img src={Icon} /></a>
+            <a className={styles.logo} href="/">
+                <img src={Icon} />
+            </a>
 
             <div className={styles.userPanel}>
                 <a className={styles.exit} href="/">

@@ -1,0 +1,57 @@
+.layout {
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.section {
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+.socialMedias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email,
+.telegram {
+    height: calc(100vh - 16rem);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.email>h2,
+.telegram>h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: 500;
+}
+
+.email a,
+.telegram a {
+    text-decoration: none;
+    margin-top: 0.375rem;
+    color: rgb(102, 102, 102);
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.email:hover,
+.telegram:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.email i,
+.telegram i {
+    font-size: 3rem;
+}

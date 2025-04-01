@@ -15,7 +15,10 @@ const Collections = () => {
                             <img src={mug.image} />
                         </a>
                         <div className={styles.info}>
-                            <p>{mug.title}</p>
+                            <a href='#'>
+                                <p>{mug.title}</p>
+                                <p>{mug.price}₸</p>
+                            </a>
                             <button className={styles.btn}>
                                 Add to Cart
                                 <input className={styles.quantity} type="number" aria-valuemin={1} />
