@@ -16,7 +16,7 @@
     height: 110%;
     object-fit: cover;
     object-position: bottom;
-    filter: blur(4px);
+    filter: blur(1.5px);
 }
 
 .about {
