@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '../../assets/Icon.png';
 import styles from './Header.module.css';
 
-const Header = ({ cartQuantity }) => {
+const Header = () => {
 
     return (
         <header className={styles.header}>
@@ -14,9 +14,9 @@ const Header = ({ cartQuantity }) => {
                 <Link to='/faq' className={styles.link}>FAQ</Link>
             </nav>
 
-            <a className={styles.logo} href="/">
+            <Link to='/' className={styles.logo} href="/">
                 <img src={Icon} />
-            </a>
+            </Link>
 
             <div className={styles.userPanel}>
                 <a className={styles.exit} href="/">
@@ -25,7 +25,7 @@ const Header = ({ cartQuantity }) => {
                 <Link to='/cart' className={styles.btn}>
                     <span className={styles.cart}>Cart</span>
                     <i className="fa-solid fa-box"></i>
-                    <span>{cartQuantity}</span>
+                    <span>0</span>
                 </Link>
             </div>
 

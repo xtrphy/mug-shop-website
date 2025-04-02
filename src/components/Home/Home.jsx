@@ -2,11 +2,11 @@ import React from 'react';
 import General from './components/General/General';
 import Collections from './components/Collections/Collections';
 
-const Home = ({ setCartQuantity }) => {
+const Home = () => {
     return (
         <>
             <General />
-            <Collections setCartQuantity={setCartQuantity} />
+            <Collections />
         </>
     );
 };

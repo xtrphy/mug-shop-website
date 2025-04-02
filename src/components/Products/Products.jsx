@@ -25,7 +25,6 @@ const Products = () => {
                                     </a>
                                     <button className={styles.btn}>
                                         Add to Cart
-                                        <input className={styles.quantity} type="number" aria-valuemin={1} />
                                     </button>
                                 </div>
                             </div>
