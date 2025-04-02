@@ -15,7 +15,8 @@ const mugs = [
         rating: {
             rate: 4.8,
             count: 152
-        }
+        },
+        quantity: 1,
     },
     {
         id: 2,

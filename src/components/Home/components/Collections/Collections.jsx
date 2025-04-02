@@ -1,10 +1,12 @@
 import React from 'react';
+import { useCart } from '../../../../utils/CartContext';
 import styles from './Collections.module.css';
 import mugs from '../../../../assets/goods';
 
 const filteredArray = mugs.slice(0, 4);
 
 const Collections = () => {
+    const { addToCart } = useCart();
 
     return (
         <div className={styles.section}>
@@ -20,7 +22,7 @@ const Collections = () => {
                                 <p>{mug.title}</p>
                                 <p>{mug.price}₸</p>
                             </a>
-                            <button className={styles.btn}>
+                            <button onClick={() => addToCart(mug)} className={styles.btn}>
                                 Add to Cart
                             </button>
                         </div>

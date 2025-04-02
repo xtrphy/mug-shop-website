@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import styles from './Cart.module.css';
+import { useCart } from '../../utils/CartContext';
 
 const Cart = () => {
-    const [cartQuantity, setCartQuantity] = useState(0);
-    const [products, setProducts] = useState([]);
+    const { deleteFromCart, addToCart, cartItems, products, productQuantity } = useCart();
 
     return (
         <div className='layout'>
@@ -15,7 +15,7 @@ const Cart = () => {
                     <h1>
                         Cart
                         <span className={styles.cartCircle}>
-                            {cartQuantity}
+                            {cartItems}
                         </span>
                     </h1>
                     <div className={styles.products}>
@@ -23,7 +23,28 @@ const Cart = () => {
                             <h3 className={styles.noProduct}>You have not added any product yet.</h3>
                         ) : (
                             products.map((product) => (
-                                <p key={product}>Привет</p>
+                                <div key={product.id} className={styles.product}>
+                                    <a href="#">
+                                        <img src={product.image} />
+                                    </a>
+                                    <div className={styles.info}>
+                                        <div className={styles.links}>
+                                            <a href='#'>
+                                                {product.title}
+                                            </a>
+                                            <a href='#'>
+                                                {product.price}₸
+                                            </a>
+                                        </div>
+
+                                        <div className={styles.btnContainer}>
+                                            <button onClick={() => addToCart(product)} className={styles.btn}><i className="fa-solid fa-plus"></i></button>
+                                            <span>{productQuantity}</span>
+                                            <button onClick={() => deleteFromCart(product)} className={styles.btn}><i className="fa-solid fa-minus"></i></button>
+                                        </div>
+                                    </div>
+
+                                </div>
                             ))
                         )}
                     </div>

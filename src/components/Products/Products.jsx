@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './Products.module.css';
+import { useCart } from '../../utils/CartContext';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import mugs from '../../assets/goods';
 
 const Products = () => {
+    const { addToCart } = useCart();
 
     return (
         <div className='layout'>
@@ -23,7 +25,7 @@ const Products = () => {
                                         <p>{mug.title}</p>
                                         <p>{mug.price}₸</p>
                                     </a>
-                                    <button className={styles.btn}>
+                                    <button onClick={() => addToCart(mug)} className={styles.btn}>
                                         Add to Cart
                                     </button>
                                 </div>
