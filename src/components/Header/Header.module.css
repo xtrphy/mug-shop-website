@@ -38,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
     gap: .375rem;
     color: white;
     font-size: .9375rem;

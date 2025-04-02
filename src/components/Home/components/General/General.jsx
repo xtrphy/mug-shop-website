@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './General.module.css';
 import backgroundMug from '../../../../assets/backgroundMug.jpg';
+import { Link } from 'react-router-dom';
 
 const General = () => {
     return (
@@ -13,7 +14,7 @@ const General = () => {
                     Best <br />
                     Mug Shop
                 </h1>
-                <button className={styles.btn}>All products</button>
+                <Link to='/products' className={styles.btn}>All products</Link>
             </div>
         </div>
     );

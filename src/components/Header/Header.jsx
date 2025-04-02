@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import Icon from '../../assets/Icon.png';
 import styles from './Header.module.css';
 
-const Header = ({ quantity = 0 }) => {
+const Header = ({ cartQuantity }) => {
+
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <Link to='/' className={styles.link}>Home</Link>
                 <Link to='/products' className={styles.link}>All products</Link>
                 <Link to='/contacts' className={styles.link}>Contacts</Link>
-                <a className={styles.link} href="/">About Us</a>
-                {/* <Link to='contacts' className={styles.link}>About Us</Link> */}
+                <Link to='/faq' className={styles.link}>FAQ</Link>
             </nav>
 
             <a className={styles.logo} href="/">
@@ -22,11 +22,11 @@ const Header = ({ quantity = 0 }) => {
                 <a className={styles.exit} href="/">
                     <i className="fa-solid fa-arrow-right-from-bracket"></i>
                 </a>
-                <a className={styles.btn} href="/">
+                <Link to='/cart' className={styles.btn}>
                     <span className={styles.cart}>Cart</span>
                     <i className="fa-solid fa-box"></i>
-                    <span>{quantity}</span>
-                </a>
+                    <span>{cartQuantity}</span>
+                </Link>
             </div>
 
         </header>

@@ -4,7 +4,8 @@ import mugs from '../../../../assets/goods';
 
 const filteredArray = mugs.slice(0, 4);
 
-const Collections = () => {
+const Collections = ({ cartQuantity, setCartQuantity, products, setProducts }) => {
+
     return (
         <div className={styles.section}>
             <h2 className={styles.collections}>Collection</h2>
@@ -19,9 +20,8 @@ const Collections = () => {
                                 <p>{mug.title}</p>
                                 <p>{mug.price}₸</p>
                             </a>
-                            <button className={styles.btn}>
+                            <button onClick={() => setCartQuantity(prevQuantity => prevQuantity + 1)} className={styles.btn}>
                                 Add to Cart
-                                <input className={styles.quantity} type="number" aria-valuemin={1} />
                             </button>
                         </div>
                     </div>

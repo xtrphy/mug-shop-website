@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import mugs from '../../assets/goods';
 
 const Products = () => {
+
     return (
         <div className='layout'>
             <Header />

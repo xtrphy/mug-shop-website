@@ -9,18 +9,18 @@ const Contacts = () => {
             <Header />
             <div className={styles.layout}>
                 <div className={styles.section}>
-                    <a className={styles.socialMedias}>
+                    <div className={styles.socialMedias}>
                         <a target='_blank' href='https://vk.com/xtrphyo' className={styles.email}>
                             <i className="fa-brands fa-vk"></i>
-                            <h2>Email</h2>
-                            <a >Vlad Perepechkin</a>
+                            <h2>VK</h2>
+                            <p>Vlad Perepechkin</p>
                         </a>
                         <a target='_blank' href="https://t.me/xtrphy1" className={styles.telegram}>
                             <i className="fa-brands fa-telegram"></i>
                             <h2>Telegram</h2>
-                            <a>https://t.me/xtrphy1</a>
+                            <p>https://t.me/xtrphy1</p>
                         </a>
-                    </a>
+                    </div>
                 </div>
             </div>
             <Footer />
