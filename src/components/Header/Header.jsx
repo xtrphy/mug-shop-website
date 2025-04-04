@@ -17,7 +17,7 @@ const Header = () => {
             </nav>
 
             <Link to='/' className={styles.logo} href="/">
-                <img src={Icon} />
+                <img className='logo' src={Icon} />
             </Link>
 
             <div className={styles.userPanel}>

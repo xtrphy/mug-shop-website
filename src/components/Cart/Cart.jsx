@@ -23,6 +23,7 @@ const Cart = () => {
     function clearCart() {
         setProducts([]);
         localStorage.setItem('products', JSON.stringify([]));
+        console.log(products);
     }
 
     return (
