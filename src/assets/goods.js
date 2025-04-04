@@ -27,7 +27,8 @@ const mugs = [
         rating: {
             rate: 4.7,
             count: 97
-        }
+        },
+        quantity: 1,
     },
     {
         id: 3,
@@ -38,7 +39,8 @@ const mugs = [
         rating: {
             rate: 4.6,
             count: 204
-        }
+        },
+        quantity: 1,
     },
     {
         id: 4,
@@ -49,7 +51,8 @@ const mugs = [
         rating: {
             rate: 4.9,
             count: 321
-        }
+        },
+        quantity: 1,
     },
     {
         id: 5,
@@ -60,7 +63,8 @@ const mugs = [
         rating: {
             rate: 4.8,
             count: 178
-        }
+        },
+        quantity: 1,
     },
     {
         id: 6,
@@ -71,7 +75,8 @@ const mugs = [
         rating: {
             rate: 4.7,
             count: 215
-        }
+        },
+        quantity: 1,
     }
 ];
 

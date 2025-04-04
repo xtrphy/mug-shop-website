@@ -5,7 +5,7 @@ import Icon from '../../assets/Icon.png';
 import styles from './Header.module.css';
 
 const Header = () => {
-    const { cartItems } = useCart();
+    const { products } = useCart();
 
     return (
         <header className={styles.header}>
@@ -27,7 +27,7 @@ const Header = () => {
                 <Link to='/cart' className={styles.btn}>
                     <span className={styles.cart}>Cart</span>
                     <i className="fa-solid fa-box"></i>
-                    <span>{cartItems}</span>
+                    <span>{products.length}</span>
                 </Link>
             </div>
 

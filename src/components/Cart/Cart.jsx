@@ -3,9 +3,27 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import styles from './Cart.module.css';
 import { useCart } from '../../utils/CartContext';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { deleteFromCart, addToCart, cartItems, products, productQuantity } = useCart();
+    const { deleteFromCart, addToCart, products, setProducts } = useCart();
+
+    function calculateTotalPrice(products) {
+        if (products.length === 0) {
+            return 0;
+        }
+
+        let totalPrice = products.reduce((sum, item) => {
+            return sum + item.price * item.quantity;
+        }, 0);
+
+        return totalPrice;
+    }
+
+    function clearCart() {
+        setProducts([]);
+        localStorage.setItem('products', JSON.stringify([]));
+    }
 
     return (
         <div className='layout'>
@@ -15,7 +33,7 @@ const Cart = () => {
                     <h1>
                         Cart
                         <span className={styles.cartCircle}>
-                            {cartItems}
+                            {products.length}
                         </span>
                     </h1>
                     <div className={styles.products}>
@@ -39,7 +57,7 @@ const Cart = () => {
 
                                         <div className={styles.btnContainer}>
                                             <button onClick={() => addToCart(product)} className={styles.btn}><i className="fa-solid fa-plus"></i></button>
-                                            <span>{productQuantity}</span>
+                                            <span>{product.quantity}</span>
                                             <button onClick={() => deleteFromCart(product)} className={styles.btn}><i className="fa-solid fa-minus"></i></button>
                                         </div>
                                     </div>
@@ -48,6 +66,15 @@ const Cart = () => {
                             ))
                         )}
                     </div>
+                    {products.length > 0
+                        ? (
+                            <div className={styles.order}>
+                                <h3>Total: {calculateTotalPrice(products)} ₸</h3>
+                                <Link to='/thank-you' onClick={clearCart} className={styles.orderBtn}>Order</Link>
+                            </div>
+                        )
+                        : null}
+
                 </div>
             </div>
             <Footer />

@@ -1,26 +1,62 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(0);
     const [products, setProducts] = useState([]);
-    const [productQuantity, setProductQuantity] = useState(1);
+
+    useEffect(() => {
+        const savedProducts = localStorage.getItem('products');
+        if (savedProducts) {
+            setProducts(JSON.parse(savedProducts));
+        }
+    }, []);
 
     const addToCart = (product) => {
-        setProducts([...products, product]);
-        setCartItems(prev => prev + 1);
+        setProducts(prevProducts => {
+            const updatedCart = [];
+            let found = false;
+
+            for (let item of prevProducts) {
+                if (item.id === product.id) {
+                    updatedCart.push({ ...item, quantity: item.quantity + 1 });
+                    found = true;
+                } else {
+                    updatedCart.push(item);
+                }
+            }
+
+            if (!found) {
+                updatedCart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('products', JSON.stringify(updatedCart));
+            return updatedCart;
+        });
     };
 
     const deleteFromCart = (product) => {
-        setProducts(prevProducts => prevProducts.filter(item => item.id !== product.id));
-        setCartItems(prev => prev - 1);
+        setProducts(prevProducts => {
+            const updatedCart = [];
+
+            for (let item of prevProducts) {
+                if (item.id === product.id) {
+                    if (item.quantity > 1) {
+                        updatedCart.push({ ...item, quantity: item.quantity - 1 });
+                    }
+                } else {
+                    updatedCart.push(item);
+                }
+            }
+            localStorage.setItem('products', JSON.stringify(updatedCart));
+            return updatedCart;
+        });
     };
 
     return (
-        <CartContext.Provider value={{ cartItems, products, productQuantity, addToCart, deleteFromCart }}>
+        <CartContext.Provider value={{ products, setProducts, addToCart, deleteFromCart }}>
             {children}
         </CartContext.Provider>
     );

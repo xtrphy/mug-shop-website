@@ -8,6 +8,7 @@ import Contacts from './components/Contacts/Contacts.jsx';
 import Faq from './components/Faq/Faq.jsx';
 import Cart from './components/Cart/Cart.jsx';
 import './index.css';
+import ThankYou from './components/ThankYou/ThankYou.jsx';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     {
         path: 'cart',
         element: <Cart />,
+    },
+    {
+        path: 'thank-you',
+        element: <ThankYou />,
     },
 ]);
 
