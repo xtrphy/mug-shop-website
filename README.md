@@ -34,14 +34,14 @@ A **unique** e-commerce website dedicated to mugs with useful sections for users
    ```
 
 2. Install dependencies:
-      ```bash
-      npm install
-      ```
+   ```bash
+   npm install
+   ```
 
 3. Start the development server:
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 ## Contributing
 
