@@ -4,8 +4,6 @@ A **unique** e-commerce website dedicated to mugs with useful sections for users
 
 ## 👉 [Live demo](https://mug-shop.netlify.app/)
 
----
-
 ## Features
 
 - Modern design made with **React**.
@@ -15,15 +13,11 @@ A **unique** e-commerce website dedicated to mugs with useful sections for users
 - Increase and decrease the number of mugs in the basket, remove them completely.
 - Working button for ordering.
 
----
-
 ## Tech Stack
 
 - **React**
 - **CSS Modules**
 - **Context API**
-
----
 
 ## Getting Started
 
