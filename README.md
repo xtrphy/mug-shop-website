@@ -15,6 +15,7 @@ A **unique** e-commerce website dedicated to mugs with useful sections for users
 
 ## Tech Stack
 
+- **Testing Library Jest**
 - **React**
 - **CSS Modules**
 - **Context API**
